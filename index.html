@@ -2,16 +2,127 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>JQuery Template</title>
+    <title>Poster Generator | Dorwin Liang</title>
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="stylesheet">
+    <style>
+    * {
+      font-size: 32px;
+      text-align:center;
+      font-family: 'Quicksand', sans-serif;
+    }
+      form {
+        display:flex;
+        flex-direction: column;
+      }
+      input {
+        margin: 25px;
+        padding: 15px;
+      }
+      #header {
+        font-size: 50px;
+      }
+      #title {
+        background-color: #ABB9D1;
+      }
+      #slogan {
+        background-color: #E8BAD0;
+      }
+      #address {
+        background-color: #E1F4C3;
+      }
+      #color {
+        background-color: #FFECCC;
+      }
+      #info {
+        background-color: #B6E4B6;
+      }
+      #final-poster {
+        background-color:gray;
+        height:800px;
+        margin: 20px 20vw;
+        display: flex;
+        flex-direction: column;
+        word-wrap: break-word;
+        border-width:6px;  
+        border-style:ridge;
+        
+      }
+      #poster-title {
+        font-size:70px;
+      }
+      #poster-slogan {
+        font-size: 50px;
+      }
+      #poster-address {
+        font-size: 30px; 
+      }
+      #poster-info {
+        font-size: 40px;
+        
+      }
+    </style>
     
     <script> //custom template . do not get rid of the code
     $(function(){ 
-        //code goes here
+      $('#generate-button').click(function(){
+        var title = $('#title').val();
+        var slogan = $('#slogan').val();
+        var address = $('#address').val();
+        var color = $('#color').val();
+        var info = $('#info').val();
+        
+        $('#poster-title').html(title);
+        $('#poster-title').css("border","5px dotted black");
+        $('#poster-slogan').html(slogan);
+        $('#poster-address').html(address);
+        $('#poster-info').html(info);
+        $('#final-poster').css('background-color',color)
+        
+        $('input').fadeOut(2000);
+        
+      });
+      
+      $('#random-button').click(function(){
+        var title = ["Silky Danger","The Diamond Flower","The Streams of the Worlds","Luck in the Death","The Fallen Lord","Secrets of Ship","The Dreamer's Obsession","Wanted For Slaughter","HSTAT SEP","High School of Telecommunications Arts and Technology"];
+        var slogan = ["Yellowjackets","Impossible is nothing","Simplicity is the Ultimate Sophistication","Purely You","Better Living Through Chemistry","Imagination at work","Just do it.","Touch The Perfection","Where's the beef?","Where do you want to go today?"];
+        var address = ["15th Ave Victory Blvd Staten Island","650 5th Ave Brooklyn, NY","1987 California Blvd","Chuck E. Cheese at 15th Ave","Sunset Park High School Brooklyn,NY","4th Ave 58st 6891 Brooklyn,NY","Burger King at Jewett Ave","Harvard University","College of Staten Island","284 E 43rd St, Brookln, Ny"];
+        var color = ["lightgreen","lightblue","lightSalmon","light","LavenderBlush","LightGrey","LightGoldenRodYellow","LightCoral","MediumSpringGreen","Violet"];
+        var info = ["Come join for Johnny's Birthday Party!","Alex's Birthday party. Come visit!","Brandon's Wedding, please come visit","Garage sale - everything on sale for $1","Riley's house auction - come visit!","Brian's Lion Show! $5.99","Tiff's Jiff Peanut Butter on sale!","Basketball Tournament $1 entry free!","Pool Party for Richard. Entry is $5","Meet Justin Bieber and One direction. Entry #999"];
+        
+        $('#poster-title').html(title[Math.floor((Math.random() * 10))]);
+        $('#poster-title').css("border","5px dotted black");
+        $('#poster-slogan').html(slogan[Math.floor((Math.random() * 10))]);
+        $('#poster-address').html(address[Math.floor((Math.random() * 10))]);
+        $('#poster-info').html(info[Math.floor((Math.random() * 10))]);
+        $('#final-poster').css('background-color',color[Math.floor((Math.random() * 10))])
+        
+        $('input').fadeOut(2000);
+      });
+      
     });
     </script>
   </head>
   <body>
-  
+    <h1 id="header">Poster Generator</h1>
+    <form>
+      <input id="title" type="text" placeholder="Title" maxlength="50"/>
+      <input id="slogan" type="text" placeholder="Slogan" maxlength="100"/>
+      <input id="address" type="text" placeholder="Address" maxlength="50"/>
+      <input id="color" type="text" placeholder="Color" maxlength="20"/>
+      <input id="info" type="text" placeholder="Poster Info" maxlength="200"/>
+    </form>
+    <div>
+    <button id="generate-button">Generate Poster</button>
+    <button id="random-button">Random Poster</button>
+    </div>
+    <div id="final-poster">
+      <h1 id="poster-title"></h1>
+      <i><h2 id="poster-slogan"></h2></i>
+      <h3 id="poster-address"></h3>
+      <p id="poster-info"></p>
+    </div>
+    
+    
   </body>
 </html>
