@@ -46,7 +46,6 @@
         word-wrap: break-word;
         border-width:6px;  
         border-style:ridge;
-        
       }
       #poster-title {
         font-size:70px;
@@ -59,8 +58,8 @@
       }
       #poster-info {
         font-size: 40px;
-        
       }
+
     </style>
     
     <script> //custom template . do not get rid of the code
@@ -79,16 +78,62 @@
         $('#poster-info').html(info);
         $('#final-poster').css('background-color',color)
         
-        $('input').fadeOut(2000);
-        
       });
       
       $('#random-button').click(function(){
-        var title = ["Silky Danger","The Diamond Flower","The Streams of the Worlds","Luck in the Death","The Fallen Lord","Secrets of Ship","The Dreamer's Obsession","Wanted For Slaughter","HSTAT SEP","High School of Telecommunications Arts and Technology"];
-        var slogan = ["Yellowjackets","Impossible is nothing","Simplicity is the Ultimate Sophistication","Purely You","Better Living Through Chemistry","Imagination at work","Just do it.","Touch The Perfection","Where's the beef?","Where do you want to go today?"];
-        var address = ["15th Ave Victory Blvd Staten Island","650 5th Ave Brooklyn, NY","1987 California Blvd","Chuck E. Cheese at 15th Ave","Sunset Park High School Brooklyn,NY","4th Ave 58st 6891 Brooklyn,NY","Burger King at Jewett Ave","Harvard University","College of Staten Island","284 E 43rd St, Brookln, Ny"];
-        var color = ["lightgreen","lightblue","lightSalmon","light","LavenderBlush","LightGrey","LightGoldenRodYellow","LightCoral","MediumSpringGreen","Violet"];
-        var info = ["Come join for Johnny's Birthday Party!","Alex's Birthday party. Come visit!","Brandon's Wedding, please come visit","Garage sale - everything on sale for $1","Riley's house auction - come visit!","Brian's Lion Show! $5.99","Tiff's Jiff Peanut Butter on sale!","Basketball Tournament $1 entry free!","Pool Party for Richard. Entry is $5","Meet Justin Bieber and One direction. Entry #999"];
+        var title = [
+          "Silky Danger",
+          "The Diamond Flower",
+          "The Streams of the Worlds",
+          "Luck in the Death",
+          "The Fallen Lord","Secrets of Ship",
+          "The Dreamer's Obsession","Wanted For Slaughter",
+          "HSTAT SEP",
+          "Peter Piper picked a peck of pickled peppers"
+          ];
+        var slogan = ["Yellowjackets",
+          "Impossible is nothing",
+          "Simplicity is the Ultimate Sophistication",
+          "Purely You","Better Living Through Chemistry",
+          "Imagination at work","Just do it.",
+          "Touch The Perfection",
+          "Where's the beef?",
+          "Where do you want to go today?"
+        ];
+        var address = [
+          "15th Ave Victory Blvd Staten Island",
+          "650 5th Ave Brooklyn, NY",
+          "1987 California Blvd",
+          "Chuck E. Cheese at 15th Ave",
+          "Sunset Park High School Brooklyn,NY",
+          "4th Ave 58st 6891 Brooklyn,NY",
+          "Burger King at Jewett Ave",
+          "Harvard University",
+          "College of Staten Island",
+          "284 E 43rd St, Brookln, NY"
+        ];
+        var color = ["lightgreen",
+        "lightblue",
+        "lightSalmon",
+        "orange",
+        "LavenderBlush",
+        "LightGrey",
+        "dodgerblue",
+        "red",
+        "MediumSpringGreen",
+        "Violet"
+        ];
+        var info = ["Come join for Johnny's Birthday Party!",
+        "Alex's Birthday party. Come visit!",
+        "Brandon's Wedding, please come visit",
+        "Garage sale - everything on sale for $1",
+        "Riley's house auction - come visit!",
+        "Brian's Lion Show! $5.99",
+        "Tiff's Jiff Peanut Butter on sale!",
+        "Basketball Tournament $1 entry free!",
+        "Pool Party for Richard. Entry is $5",
+        "Meet Justin Bieber and One direction. Entry #999"
+        ];
         
         $('#poster-title').html(title[Math.floor((Math.random() * 10))]);
         $('#poster-title').css("border","5px dotted black");
@@ -97,7 +142,7 @@
         $('#poster-info').html(info[Math.floor((Math.random() * 10))]);
         $('#final-poster').css('background-color',color[Math.floor((Math.random() * 10))])
         
-        $('input').fadeOut(2000);
+        
       });
       
     });
